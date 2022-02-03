@@ -25,6 +25,7 @@ namespace Biblioteca.Models
                 emprestimo.LivroId = e.LivroId;
                 emprestimo.DataEmprestimo = e.DataEmprestimo;
                 emprestimo.DataDevolucao = e.DataDevolucao;
+                emprestimo.Devolvido = e.Devolvido;
 
                 bc.SaveChanges();
             }
@@ -33,6 +34,7 @@ namespace Biblioteca.Models
         public ICollection<Emprestimo> ListarTodos(FiltrosEmprestimos filtro = null)
         {
             using (BibliotecaContext bc = new BibliotecaContext())
+             
             {
                IQueryable<Emprestimo> query;
 
@@ -53,10 +55,10 @@ namespace Biblioteca.Models
                     }
                 }
                 else
-                {
+                { 
                     query = bc.Emprestimos;
                 }
-                return query.Include(e => e.Livro).OrderByDescending(e => e.DataDevolucao).ToList();
+                return query.Include(e => e.Livro).OrderByDescending(e => e.DataDevolucao).Where(e => e.Devolvido == false).ToList();
                 
             }
         }
