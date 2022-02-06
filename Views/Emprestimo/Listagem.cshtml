@@ -6,6 +6,7 @@
     int pAtual = Int32.Parse(ViewData["pAtual"].ToString());
     int NumUserP = (Model.Count<FiltroP ?  Model.Count : FiltroP);
     int NumTotalP = Model.Count/NumUserP + (Model.Count%NumUserP == 0 ? 0 : 1);
+    string Classe = "";
 }
 
 <div class="row">
@@ -53,7 +54,13 @@
             <tbody>
                    @for(int i = (pAtual-1)*NumUserP; i<(NumUserP*pAtual<Model.Count?NumUserP*pAtual:Model.Count); i++)
                 {
-                <tr>
+                    @if((System.DateTime.Compare(System.DateTime.Now, @Model[i].DataDevolucao)>0))
+                    {
+                        Classe = "text-danger";
+                    }else{
+                        Classe="";
+                    }
+                <tr class="@Classe">
                     <td>@Model[i].Id</td>
                     <td>@Model[i].NomeUsuario</td>
                     <td>@Model[i].DataEmprestimo.ToString("dd/MM/yyyy")</td>
