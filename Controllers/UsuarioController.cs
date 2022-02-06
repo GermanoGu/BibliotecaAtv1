@@ -45,6 +45,7 @@ namespace Biblioteca.Controllers
         public IActionResult InserirUser(Usuario newUser)
         {
             UsuarioService usr = new UsuarioService();
+            
             usr.Inserir(newUser);
             return RedirectToAction("ListaUsuarios");
         }

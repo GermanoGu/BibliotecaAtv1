@@ -20,18 +20,8 @@
         <div class="form-group mb-2 mx-sm-3">
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-
-        <div id ="seletorPaginas">
-            <ul class="pagination">
-                 <li class="page-item">Página:</li>
-            @for(int i=1; i<=NumTotalP; i++)
-            {
-               
-                <li class="page-item"><a class="page-link" href="/Livro/Listagem?pAtual=@i">@i</a></li>
-            }
-            </ul>
-        </div>
+        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button><br>
+            
     </form>
     </div>
 </div>
@@ -64,6 +54,17 @@
         }else{
             <span>Nenhum registro encontrado</span>
         }
+        
+        <div class="pag">
+            <ul class="pagination">
+                 <li class="page-item"><a class="page-link">Página</a></li>
+            @for(int i=1; i<=NumTotalP; i++)
+            {
+               
+                <li class="page-item"><a class="page-link" href="/Livro/Listagem?pAtual=@i">@i</a></li>
+            }
+            </ul>
+            </div>
         
     </div>
 </div>

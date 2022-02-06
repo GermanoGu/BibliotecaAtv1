@@ -20,8 +20,9 @@ namespace Biblioteca.Controllers
         }
 
         public IActionResult Index()
-        {Autenticacao.CheckLogin(this);
-            Autenticacao.admTrue(this);
+        {
+            Autenticacao.CheckLogin(this);
+            
             return View();
         }
 
