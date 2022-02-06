@@ -1,7 +1,13 @@
 @model List<Livro>
 @{
     ViewData["Title"] = "Listagem de Livros";
-}
+
+    int FiltroP = Int32.Parse( ViewData["livrosP"].ToString());
+    int pAtual = Int32.Parse(ViewData["pAtual"].ToString());
+    int NumLivrosP = (Model.Count<FiltroP ?  Model.Count : FiltroP);
+    int NumTotalP = Model.Count/NumLivrosP + (Model.Count%NumLivrosP == 0 ? 0 : 1);
+    
+    }
 <div class="row">
     <div class="col-md-12">
     <form class="form-inline" method="POST">
@@ -15,6 +21,17 @@
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+
+        <div id ="seletorPaginas">
+            <ul class="pagination">
+                 <li class="page-item">Página:</li>
+            @for(int i=1; i<=NumTotalP; i++)
+            {
+               
+                <li class="page-item"><a class="page-link" href="/Livro/Listagem?pAtual=@i">@i</a></li>
+            }
+            </ul>
+        </div>
     </form>
     </div>
 </div>
@@ -32,14 +49,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(Livro l in Model)
+                @for(int i = (pAtual-1)*NumLivrosP; i<(NumLivrosP*pAtual<Model.Count?NumLivrosP*pAtual:Model.Count); i++)
                 {
                 <tr>
-                    <td>@l.Id</td>
-                    <td>@l.Titulo</td>
-                    <td>@l.Autor</td>
-                    <td>@l.Ano</td>
-                    <td><a href="/Livro/Edicao/@l.Id">Editar</a></td>
+                    <td>@Model[i].Id</td>
+                    <td>@Model[i].Titulo</td>
+                    <td>@Model[i].Autor</td>
+                    <td>@Model[i].Ano</td>
+                    <td><a href="/Livro/Edicao/@Model[i].Id">Editar</a></td>
                 </tr>
                 }
             </tbody>

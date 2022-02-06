@@ -1,6 +1,11 @@
-@model ICollection<Emprestimo>
+@model List<Emprestimo>
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
+    
+    int FiltroP = Int32.Parse( ViewData["usuarioP"].ToString());
+    int pAtual = Int32.Parse(ViewData["pAtual"].ToString());
+    int NumUserP = (Model.Count<FiltroP ?  Model.Count : FiltroP);
+    int NumTotalP = Model.Count/NumUserP + (Model.Count%NumUserP == 0 ? 0 : 1);
 }
 
 <div class="row">
@@ -16,6 +21,17 @@
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+        
+        <div id ="seletorPaginas">
+            <ul class="pagination">
+                 <li class="page-item">Página:</li>
+            @for(int i=1; i<=NumTotalP; i++)
+            {
+               
+                <li class="page-item"><a class="page-link" href="/Emprestimo/Listagem?pAtual=@i">@i</a></li>
+            }
+            </ul>
+        </div>
     </form>
     </div>
 </div>
@@ -35,16 +51,16 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(Emprestimo e in Model)
+                   @for(int i = (pAtual-1)*NumUserP; i<(NumUserP*pAtual<Model.Count?NumUserP*pAtual:Model.Count); i++)
                 {
                 <tr>
-                    <td>@e.Id</td>
-                    <td>@e.NomeUsuario</td>
-                    <td>@e.DataEmprestimo.ToString("dd/MM/yyyy")</td>
-                    <td>@e.DataDevolucao.ToString("dd/MM/yyyy")</td>
-                    <td>@e.Livro.Titulo</td>
-                    <td>@e.Livro.Autor</td>
-                    <td><a href="/Emprestimo/Edicao/@e.Id">Editar</a></td>
+                    <td>@Model[i].Id</td>
+                    <td>@Model[i].NomeUsuario</td>
+                    <td>@Model[i].DataEmprestimo.ToString("dd/MM/yyyy")</td>
+                    <td>@Model[i].DataDevolucao.ToString("dd/MM/yyyy")</td>
+                    <td>@Model[i].Livro.Titulo</td>
+                    <td>@Model[i].Livro.Autor</td>
+                    <td><a href="/Emprestimo/Edicao/@Model[i].Id">Editar</a></td>
                 </tr>
                 }
             </tbody>
