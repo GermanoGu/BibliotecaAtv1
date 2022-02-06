@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Usuario\\ListaUsuarios.cshtml",
+      "TargetPath": "Views\\Usuario\\ListaUsuarios.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Emprestimo\\Cadastro.cshtml",
       "TargetPath": "Views\\Emprestimo\\Cadastro.cshtml",
       "FileKind": "mvc"
@@ -14452,6 +14457,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Usuario\\InserirUser.cshtml",
+      "TargetPath": "Views\\Usuario\\InserirUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Livro\\Edicao.cshtml",
       "TargetPath": "Views\\Livro\\Edicao.cshtml",
       "FileKind": "mvc"
@@ -14459,6 +14469,11 @@
     {
       "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Usuario\\AtualizaUser.cshtml",
+      "TargetPath": "Views\\Usuario\\AtualizaUser.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14474,6 +14489,11 @@
     {
       "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\gusta\\OneDrive\\Área de Trabalho\\Gustavo_ATv01B\\Biblioteca\\Views\\Usuario\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuario\\NeedAdmin.cshtml",
       "FileKind": "mvc"
     }
   ],
