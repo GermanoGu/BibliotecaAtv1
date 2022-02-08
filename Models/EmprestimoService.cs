@@ -44,10 +44,10 @@ namespace Biblioteca.Models
                     {
 
                         case "Usuario":
-                            query = bc.Emprestimos.Where(e => e.NomeUsuario.Contains(filtro.Filtro));
+                            query = bc.Emprestimos.Where(e => e.NomeUsuario.ToLower().Contains(filtro.Filtro.ToLower()));
                             break;
                         case "Livro":
-                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.Contains(filtro.Filtro) || e.Livro.Autor.Contains(filtro.Filtro) );
+                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.ToLower().Contains(filtro.Filtro.ToLower()) || e.Livro.Autor.ToLower().Contains(filtro.Filtro.ToLower()) );
                             break;
                         default:
                             query = bc.Emprestimos;

@@ -5,7 +5,13 @@
     int FiltroP = Int32.Parse( ViewData["usuarioP"].ToString());
     int pAtual = Int32.Parse(ViewData["pAtual"].ToString());
     int NumUserP = (Model.Count<FiltroP ?  Model.Count : FiltroP);
-    int NumTotalP = Model.Count/NumUserP + (Model.Count%NumUserP == 0 ? 0 : 1);
+    int NumTotalP;
+    @if(Model.Count != 0){
+     NumTotalP = Model.Count/NumUserP + (Model.Count%NumUserP == 0 ? 0 : 1);
+    }else
+    {
+        NumTotalP =1;
+    }
     string Classe = "";
 }
 
@@ -29,7 +35,7 @@
 
 <div class="row">
     <div class="col-md-12">
-        @if(Model.Count > 0){
+        @if(Model.Count != 0){
         <table class="table table-striped"> 
             <thead>
                 <tr><th>Id</th>
@@ -65,10 +71,10 @@
         }else{
             <span>Nenhum registro encontrado</span>
         }
-        <div class="pag">
+       <div class="pag">
             <ul class="pagination">
                  <li class="page-item"><a class="page-link">Página</a></li>
-            @for(int i=1; i<=NumTotalP; i++)
+             @for(int i=1; i<=NumTotalP; i++) 
             {
                
                 <li class="page-item"><a class="page-link" href="/Emprestimo/Listagem?pAtual=@i">@i</a></li>

@@ -108,3 +108,8 @@ C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\obj\Debug\ne
 C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\AtualizaUser.cshtml.g.cs
 C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\InserirUser.cshtml.g.cs
 C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\NeedAdmin.cshtml.g.cs
+C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\bin\Debug\netcoreapp3.1\X.PagedList.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\bin\Debug\netcoreapp3.1\X.PagedList.Mvc.Core.dll
+C:\Users\gusta\OneDrive\Área de Trabalho\Gustavo_ATv01B\Biblioteca\obj\Debug\netcoreapp3.1\Biblioteca.MvcApplicationPartsAssemblyInfo.cs
